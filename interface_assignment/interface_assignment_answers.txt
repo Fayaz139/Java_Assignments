@@ -1,1 +1,47 @@
+1. What is an interface in Java?
+   - An interface in Java is a blueprint of a class that defines a set of methods (without implementation) that a class must implement. It is used to achieve abstraction and multiple inheritance in Java. Interfaces can contain only abstract methods (before Java 8) and constants (public static final variables). From Java 8 onwards, interfaces can also have default and static methods.
 
+2. Which modifiers are allowed for methods in an interface? Explain with an example.
+   - The modifiers allowed for methods in an interface are:
+     - `public`: Methods in an interface are public by default.
+     - `abstract`: Methods in an interface are abstract by default (before Java 8).
+     - `default`: From Java 8, interfaces can have default methods with implementation.
+     - `static`: From Java 8, interfaces can have static methods with implementation.
+   
+   Example:
+   interface MyInterface {
+       // Abstract method (public and abstract by default)
+       void myMethod();
+
+       // Default method (Java 8+)
+       default void myDefaultMethod() {
+           System.out.println("Default method in interface");
+       }
+
+       // Static method (Java 8+)
+       static void myStaticMethod() {
+           System.out.println("Static method in interface");
+       }
+   }
+
+3. What is the use of interface in Java? Or, why do we use an interface in Java?
+   - Interfaces in Java are used for:
+     - Achieving abstraction: Interfaces allow us to define methods without implementation, which can be implemented by different classes.
+     - Achieving multiple inheritance: Java does not support multiple inheritance with classes, but a class can implement multiple interfaces.
+     - Loose coupling: Interfaces help in achieving loose coupling by separating the definition of methods from their implementation.
+     - Providing a contract: Interfaces define a contract that implementing classes must follow, ensuring consistency across different implementations.
+
+4. What is the difference between abstract class and interface in Java?
+   - Abstract Class:
+     - Can have both abstract and non-abstract methods.
+     - Can have instance variables.
+     - A class can extend only one abstract class.
+     - Constructors are allowed.
+     - Can have any access modifier for methods and variables.
+   
+   - Interface:
+     - Can have only abstract methods (before Java 8), default methods, and static methods (from Java 8).
+     - Can only have constants (public static final variables).
+     - A class can implement multiple interfaces.
+     - No constructors are allowed.
+     - Methods are public by default, and variables are public static final by default.
